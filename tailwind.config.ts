@@ -52,6 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'solana-pay': {
+					yes: 'hsl(var(--solana-pay-yes))',
+					partial: 'hsl(var(--solana-pay-partial))',
+					no: 'hsl(var(--solana-pay-no))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
