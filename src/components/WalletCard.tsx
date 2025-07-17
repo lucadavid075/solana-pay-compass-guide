@@ -17,7 +17,7 @@ interface Wallet {
   fiat_off_ramp: string;
   push_notifications: string;
   solana_pay_qr: string;
-  solana_pay_ux_notes: string;
+  solana_pay_access: string;
   version_tested: string;
   date_tested: string;
   additional_features: {
@@ -27,6 +27,7 @@ interface Wallet {
     multi_chain_support: string;
     open_source: string;
     user_interface: string;
+    solana_pay_ux_notes: string;
   };
 }
 
@@ -67,7 +68,7 @@ const getSolanaPayBadgeColor = (status: string) => {
   }
 };
 
-const getSolanaPayStatus = (qrSupport: string, notes: string) => {
+const getSolanaPayStatus = (qrSupport: string, notes: string = '') => {
   if (qrSupport.toLowerCase() === 'yes') {
     if (notes.includes('one-tap') || notes.includes('seamless')) {
       return 'Yes';
@@ -79,7 +80,7 @@ const getSolanaPayStatus = (qrSupport: string, notes: string) => {
 
 export default function WalletCard({ wallet }: WalletCardProps) {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
-  const solanaPayStatus = getSolanaPayStatus(wallet.solana_pay_qr, wallet.solana_pay_ux_notes);
+  const solanaPayStatus = getSolanaPayStatus(wallet.solana_pay_qr, wallet.additional_features.solana_pay_ux_notes || '');
 
   return (
     <div className="group">
@@ -99,7 +100,7 @@ export default function WalletCard({ wallet }: WalletCardProps) {
                   </Badge>
                 </TooltipTrigger>
                 <TooltipContent side="top" className="max-w-xs">
-                  <p className="text-sm">{wallet.solana_pay_ux_notes}</p>
+                  <p className="text-sm">{wallet.additional_features.solana_pay_ux_notes || 'No additional notes available'}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -194,7 +195,7 @@ export default function WalletCard({ wallet }: WalletCardProps) {
                       {solanaPayStatus}
                     </Badge>
                   </div>
-                  <p className="text-sm text-muted-foreground">{wallet.solana_pay_ux_notes}</p>
+                  <p className="text-sm text-muted-foreground">{wallet.additional_features.solana_pay_ux_notes || 'No additional notes available'}</p>
                 </div>
                 
                 <div>

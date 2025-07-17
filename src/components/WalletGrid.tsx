@@ -14,7 +14,7 @@ interface Wallet {
   fiat_off_ramp: string;
   push_notifications: string;
   solana_pay_qr: string;
-  solana_pay_ux_notes: string;
+  solana_pay_access: string;
   version_tested: string;
   date_tested: string;
   additional_features: {
@@ -24,10 +24,11 @@ interface Wallet {
     multi_chain_support: string;
     open_source: string;
     user_interface: string;
+    solana_pay_ux_notes: string;
   };
 }
 
-const getSolanaPayStatus = (qrSupport: string, notes: string) => {
+const getSolanaPayStatus = (qrSupport: string, notes: string = '') => {
   if (qrSupport.toLowerCase() === 'yes') {
     if (notes.includes('one-tap') || notes.includes('seamless')) {
       return 'Yes';
@@ -37,7 +38,7 @@ const getSolanaPayStatus = (qrSupport: string, notes: string) => {
   return 'No';
 };
 
-const getSolanaPaySortValue = (qrSupport: string, notes: string) => {
+const getSolanaPaySortValue = (qrSupport: string, notes: string = '') => {
   const status = getSolanaPayStatus(qrSupport, notes);
   switch (status) {
     case 'Yes': return 3;
@@ -61,10 +62,10 @@ export default function WalletGrid() {
       // Search filter
       const searchMatch = searchTerm === '' || 
         wallet.wallet_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        wallet.solana_pay_ux_notes.toLowerCase().includes(searchTerm.toLowerCase());
+        (wallet.additional_features.solana_pay_ux_notes || '').toLowerCase().includes(searchTerm.toLowerCase());
 
       // Solana Pay filter
-      const solanaPayStatus = getSolanaPayStatus(wallet.solana_pay_qr, wallet.solana_pay_ux_notes);
+      const solanaPayStatus = getSolanaPayStatus(wallet.solana_pay_qr, wallet.additional_features.solana_pay_ux_notes || '');
       const solanaPayMatch = solanaPayFilter === 'all' || 
         (solanaPayFilter === 'yes' && solanaPayStatus === 'Yes') ||
         (solanaPayFilter === 'partial' && solanaPayStatus === 'Partial') ||
@@ -87,8 +88,8 @@ export default function WalletGrid() {
         case 'name':
           return a.wallet_name.localeCompare(b.wallet_name);
         case 'solana-pay':
-          return getSolanaPaySortValue(b.solana_pay_qr, b.solana_pay_ux_notes) - 
-                 getSolanaPaySortValue(a.solana_pay_qr, a.solana_pay_ux_notes);
+          return getSolanaPaySortValue(b.solana_pay_qr, b.additional_features.solana_pay_ux_notes || '') - 
+                 getSolanaPaySortValue(a.solana_pay_qr, a.additional_features.solana_pay_ux_notes || '');
         case 'platforms':
           return b.platforms.length - a.platforms.length;
         default:
@@ -101,7 +102,7 @@ export default function WalletGrid() {
 
   const oneTapWallets = useMemo(() => {
     return wallets.filter(wallet => 
-      getSolanaPayStatus(wallet.solana_pay_qr, wallet.solana_pay_ux_notes) === 'Yes'
+      getSolanaPayStatus(wallet.solana_pay_qr, wallet.additional_features.solana_pay_ux_notes || '') === 'Yes'
     ).length;
   }, [wallets]);
 
