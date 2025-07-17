@@ -1,3 +1,5 @@
+[Major Solana Wallets Compatibility With Solana Pay behaviour Document](https://docs.google.com/document/d/1ug3pTl1fDaZ7-YPFtqmZjxFBjsoZyhHuN0RaU05EGvI/edit?usp=sharing)
+
 # Solana Wallet Explorer
 
 ## Overview
