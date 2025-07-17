@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="space-y-6">
         <div className="text-center">
           <p className="text-muted-foreground">
-            Data last updated: July 16, 2025
+            Data last updated: July 17, 2025
           </p>
         </div>
         
@@ -32,32 +32,12 @@ export default function Footer() {
             </a>
           </div>
           
-          <div className="flex gap-4">
-            <a
-              href="https://twitter.com/intent/tweet?text=Check out this comprehensive Solana Wallet Reference with Solana Pay QR compatibility notes!&url="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-              aria-label="Share on Twitter"
-            >
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/sharing/share-offsite/?url="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-              aria-label="Share on LinkedIn"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-          </div>
+          
         </div>
         
         <div className="text-center text-sm text-muted-foreground">
           <p>
             Built for the Solana community • 
-            <span className="text-primary"> Wallet logos © respective wallet providers</span>
           </p>
         </div>
       </div>
