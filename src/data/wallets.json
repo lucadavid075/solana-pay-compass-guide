@@ -45,7 +45,7 @@
         "multi_chain_support": "Yes",
         "open_source": "Yes",
         "user_interface": "Rich, multi-platform",
-        "solana_pay_ux_notes": "One-tap QR scanning via a dedicated QR button on the main screen, accessible without menu navigation. Scans complete in 1-2 seconds on mainnet, with instant confirmation and a 'Payment Confirmed' notification. No errors reported in testing. The UI is polished, with a fade-in animation for the scanner. UX quirk: slight lag (1-2 seconds) on older Android devices (e.g., Samsung Galaxy S20, Android 11) when opening the scanner. Another issue: auto-focus struggles in low-light conditions, requiring manual adjustment. Fully compatible with Solana Pay, ideal for users needing fast, multi-chain-supported checkouts."
+        "solana_pay_ux_notes": "seamless QR scanning via a dedicated QR button on the main screen, accessible without menu navigation. Scans complete in 1-2 seconds on mainnet, with instant confirmation and a 'Payment Confirmed' notification. No errors reported in testing. The UI is polished, with a fade-in animation for the scanner. UX quirk: slight lag (1-2 seconds) on older Android devices (e.g., Samsung Galaxy S20, Android 11) when opening the scanner. Another issue: auto-focus struggles in low-light conditions, requiring manual adjustment. Fully compatible with Solana Pay, ideal for users needing fast, multi-chain-supported checkouts."
       }
     },
     {
@@ -58,7 +58,7 @@
       "fiat_on_ramp": "No",
       "fiat_off_ramp": "No",
       "push_notifications": "No",
-      "solana_pay_qr": "No",
+      "solana_pay_qr": "Yes",
       "solana_pay_access": "None",
       "version_tested": "2.1.2",
       "date_tested": "2025-07-17",
@@ -117,7 +117,7 @@
         "multi_chain_support": "Yes",
         "open_source": "No",
         "user_interface": "Multi-chain focused",
-        "solana_pay_ux_notes": "One-tap QR scanning via an easily accessible QR button on the main screen, not buried under icons, allowing quick navigation. Scans process Solana Pay QR codes in 2-3 seconds with fast mainnet transaction confirmation and a 'Payment Processed' notification. No critical errors reported, but a minor UX quirk: occasional 1-second delay in scanner initialization on older devices (e.g., Android 12 devices). Another issue: the scanner lacks a dedicated Solana Pay mode, which may confuse users managing multi-chain assets. Fully compatible with Solana Pay, suitable for merchants but slightly less intuitive for Solana-specific workflows."
+        "solana_pay_ux_notes": "seamless QR scanning via an easily accessible QR button on the main screen, not buried under icons, allowing quick navigation. Scans process Solana Pay QR codes in 2-3 seconds with fast mainnet transaction confirmation and a 'Payment Processed' notification. No critical errors reported, but a minor UX quirk: occasional 1-second delay in scanner initialization on older devices (e.g., Android 12 devices). Another issue: the scanner lacks a dedicated Solana Pay mode, which may confuse users managing multi-chain assets. Fully compatible with Solana Pay, suitable for merchants but slightly less intuitive for Solana-specific workflows."
       }
     },
     {
@@ -130,7 +130,7 @@
       "fiat_on_ramp": "Yes",
       "fiat_off_ramp": "No",
       "push_notifications": "Yes",
-      "solana_pay_qr": "Partial",
+      "solana_pay_qr": "Yes",
       "solana_pay_access": "Buried",
       "version_tested": "1.31.0+98 (98)",
       "date_tested": "2025-07-17",
@@ -141,7 +141,7 @@
         "multi_chain_support": "Yes",
         "open_source": "No",
         "user_interface": "Mobile-first",
-        "solana_pay_ux_notes": "QR scanner is buried in the swap interface (Home > Swap > More > Scanner), requiring four taps and 5-6 seconds to access, making it impractical for quick Solana Pay checkouts. Scans process QR codes but take 3-5 seconds, with a frequent 'Transaction Failed: Invalid Input' error, resolving after a retry. UX is poor due to an unpolished interface, no pop-up guidance post-scan, and unclear navigation labels, leaving users unsure of next steps. Likely in beta, not optimized for Solana Pay; significant UX improvements needed for merchant use."
+        "solana_pay_ux_notes": "QR scanner present but poor user experience, possibly due to unpolished interface or unclear functionality (it does nothing after taking the shots and no pop up on the screen as to what to do next)."
       }
     },
     {
@@ -165,7 +165,7 @@
         "multi_chain_support": "No",
         "open_source": "No",
         "user_interface": "Retail-focused",
-        "solana_pay_ux_notes": "One-tap QR scanning via a large, prominent QR button on the main screen, designed for retail users. Scans complete in 1-2 seconds on mainnet, with instant confirmation and a 'Payment Successful' notification. No errors reported during testing with the Solana Pay Point of Sale app. The UI is clean, featuring a smooth slide-in animation. UX quirk: the scanner flashes in low-light conditions (e.g., indoors), which may distract users or cause brief lag on older devices (e.g., iPhone XR). No haptic feedback on scan success, which could enhance UX. Highly reliable for fast Solana Pay checkouts."
+        "solana_pay_ux_notes": "One-tap QR scanning via a large, prominent QR button on the main screen, designed for retail users. Scans complete in 1-2 seconds on mainnet, with seamless transaction and instant confirmation and a 'Payment Successful' notification. No errors reported during testing with the Solana Pay Point of Sale app. The UI is clean, featuring a smooth slide-in animation. UX quirk: the scanner flashes in low-light conditions (e.g., indoors), which may distract users or cause brief lag on older devices (e.g., iPhone XR). No haptic feedback on scan success, which could enhance UX. Highly reliable for fast Solana Pay checkouts."
       }
     },
     {
@@ -178,7 +178,7 @@
       "fiat_on_ramp": "No",
       "fiat_off_ramp": "No",
       "push_notifications": "No",
-      "solana_pay_qr": "Partial",
+      "solana_pay_qr": "Yes",
       "solana_pay_access": "One-tap",
       "version_tested": "1.153.0",
       "date_tested": "2025-07-17",
@@ -189,31 +189,7 @@
         "multi_chain_support": "No",
         "open_source": "No",
         "user_interface": "Basic",
-        "solana_pay_ux_notes": "One-tap QR scanning via a clear QR icon on the main screen, accessible without menu navigation. Scans process Solana Pay QR codes in 2-3 seconds on mainnet, but a critical error occurs: the transaction value displays as 0, with an error message: 'Value Not Found.' This bug, likely due to a UI refresh or API parsing issue, causes confusion as users cannot verify amounts. UX is further hindered by no confirmation animation or pop-up guidance post-scan, reducing user confidence. Not reliable for merchant checkouts until the value display issue is fixed."
-      }
-    },
-    {
-      "wallet_name": "Para",
-      "platforms": ["Web", "iOS", "Android"],
-      "custody_model": "Self-custody",
-      "in_app_dex_swap": "Yes",
-      "nft_gallery": "Yes",
-      "in_app_staking": "No",
-      "fiat_on_ramp": "Yes",
-      "fiat_off_ramp": "No",
-      "push_notifications": "Yes",
-      "solana_pay_qr": "Yes",
-      "solana_pay_access": "One-tap",
-      "version_tested": "Unknown",
-      "date_tested": "2025-07-17",
-      "additional_features": {
-        "hardware_wallet_integration": "No",
-        "dapp_browser": "Yes",
-        "security_features": "2FA, Biometric authentication",
-        "multi_chain_support": "Yes",
-        "open_source": "No",
-        "user_interface": "Comprehensive, authentication-focused",
-        "solana_pay_ux_notes": "One-tap QR scanning via a prominent QR button on the main dashboard, designed for seamless authentication. Scans complete in 1-2 seconds on mainnet with instant confirmation and a 'Transaction Authorized' popup. No errors reported, based on assumed compatibility similar to Phantom. The UI is intuitive with a smooth transition animation. UX quirk: occasional minor lag (1 second) on low-end devices (e.g., Android 11) during scanner initialization. Lacks haptic feedback, which could improve user experience. Assumed fully compatible with Solana Pay, suitable for users needing secure, multi-chain authentication for payments."
+        "solana_pay_ux_notes": "QR scanner successfully scans Solana Pay QR codes but has poor usability as the transaction value fails to reflect and returns 0 value."
       }
     },
     {
@@ -228,7 +204,7 @@
       "push_notifications": "No",
       "solana_pay_qr": "No",
       "solana_pay_access": "None",
-      "version_tested": "Unknown",
+      "version_tested": "3.4",
       "date_tested": "2025-07-17",
       "additional_features": {
         "hardware_wallet_integration": "Yes (Native)",
@@ -241,12 +217,84 @@
       }
     },
     {
-      "wallet_name": "Gem Wallet",
-      "platforms": ["iOS", "Android"],
+      "wallet_name": "Exodus",
+      "platforms": ["iOS", "Android", "Windows", "macOS", "Linux"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
       "nft_gallery": "Yes",
       "in_app_staking": "Yes",
+      "fiat_on_ramp": "Yes",
+      "fiat_off_ramp": "No",
+      "push_notifications": "No",
+      "solana_pay_qr": "Yes",
+      "solana_pay_access": "Buried",
+      "version_tested": "24.1.3",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "Yes (Trezor)",
+        "dapp_browser": "Yes",
+        "security_features": "Biometric authentication",
+        "multi_chain_support": "Yes",
+        "open_source": "No",
+        "user_interface": "Multi-platform",
+        "solana_pay_ux_notes": "QR support exists but is buried in the menu (Settings > Advanced > Scan), requiring multiple taps. Scans Solana Pay QR codes with a 2-3 second delay on mainnet, with confirmation but no clear success notification. Minor errors during testing with the Solana Pay POS app, such as occasional 'Invalid QR' prompts, likely due to partial protocol support. Suitable for multi-chain users but not optimized for fast Solana Pay checkouts."
+      }
+    },
+    {
+      "wallet_name": "Trust Wallet",
+      "platforms": ["iOS", "Android", "Chrome"],
+      "custody_model": "Self-custody",
+      "in_app_dex_swap": "Yes",
+      "nft_gallery": "Yes",
+      "in_app_staking": "Yes",
+      "fiat_on_ramp": "Yes",
+      "fiat_off_ramp": "No",
+      "push_notifications": "Yes",
+      "solana_pay_qr": "Yes",
+      "solana_pay_access": "Buried",
+      "version_tested": "8.15",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "No",
+        "dapp_browser": "Yes",
+        "security_features": "Basic",
+        "multi_chain_support": "Yes",
+        "open_source": "No",
+        "user_interface": "Multi-chain focused",
+        "solana_pay_ux_notes": "QR scanner recognizes Solana Pay QR codes but requires multiple attempts (2-3 tries) to scan properly, with a 3-4 second delay on mainnet. Confirmation is clunky, with no clear success notification. Testing with the Solana Pay POS app showed occasional 'Network Error' messages, possibly due to cluster mismatches. UX is not optimized for Solana Pay, making it less suitable for quick merchant checkouts."
+      }
+    },
+    {
+      "wallet_name": "OKX Wallet",
+      "platforms": ["iOS", "Android", "Chrome"],
+      "custody_model": "Self-custody",
+      "in_app_dex_swap": "Yes",
+      "nft_gallery": "Yes",
+      "in_app_staking": "Yes",
+      "fiat_on_ramp": "Yes",
+      "fiat_off_ramp": "No",
+      "push_notifications": "Yes",
+      "solana_pay_qr": "Not-tested",
+      "solana_pay_access": "Buried",
+      "version_tested": "TBA",
+      "date_tested": "TBA",
+      "additional_features": {
+        "hardware_wallet_integration": "No",
+        "dapp_browser": "Yes",
+        "security_features": "Risky contract alerts",
+        "multi_chain_support": "Yes",
+        "open_source": "No",
+        "user_interface": "Multi-chain focused",
+        "solana_pay_ux_notes": "Not tested yet"
+      }
+    },
+    {
+      "wallet_name": "Fuse Wallet",
+      "platforms": ["iOS", "Android"],
+      "custody_model": "Self-custody",
+      "in_app_dex_swap": "Yes",
+      "nft_gallery": "Yes",
+      "in_app_staking": "No",
       "fiat_on_ramp": "Yes",
       "fiat_off_ramp": "No",
       "push_notifications": "Yes",
@@ -258,10 +306,202 @@
         "hardware_wallet_integration": "No",
         "dapp_browser": "Yes",
         "security_features": "Basic",
+        "multi_chain_support": "No",
+        "open_source": "No",
+        "user_interface": "User-friendly",
+        "solana_pay_ux_notes": "One-tap QR scanning via a prominent QR button on the main screen. Scans complete in 1-2 seconds on mainnet with instant confirmation and a 'Payment Successful' notification. No errors reported during testing with the Solana Pay POS app. Clean UI with smooth animations. Minor UX quirk: no haptic feedback on scan success."
+      }
+    },
+    {
+      "wallet_name": "Binance Web3 Wallet",
+      "platforms": ["iOS", "Android", "Web"],
+      "custody_model": "MPC",
+      "in_app_dex_swap": "Yes",
+      "nft_gallery": "Yes",
+      "in_app_staking": "Yes",
+      "fiat_on_ramp": "Yes",
+      "fiat_off_ramp": "Yes",
+      "push_notifications": "Yes",
+      "solana_pay_qr": "Partial",
+      "solana_pay_access": "Buried",
+      "version_tested": "Unknown",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "No",
+        "dapp_browser": "Yes",
+        "security_features": "2FA, Biometric authentication",
+        "multi_chain_support": "Yes",
+        "open_source": "No",
+        "user_interface": "Comprehensive",
+        "solana_pay_ux_notes": "QR scanner recognizes Solana Pay QR codes but is buried in the menu (Wallet > Settings > Scan), requiring multiple taps. Scans take 2-3 seconds on mainnet with confirmation but no prominent success notification. Testing with the Solana Pay POS app showed occasional navigation issues, making it less ideal for quick checkouts."
+      }
+    },  
+    {
+      "wallet_name": "Robinhood Wallet",
+      "platforms": ["iOS", "Android"],
+      "custody_model": "Self-custody",
+      "in_app_dex_swap": "Yes",
+      "nft_gallery": "Yes",
+      "in_app_staking": "No",
+      "fiat_on_ramp": "Yes",
+      "fiat_off_ramp": "Yes",
+      "push_notifications": "Yes",
+      "solana_pay_qr": "Yes",
+      "solana_pay_access": "Buried",
+      "version_tested": "Unknown",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "No",
+        "dapp_browser": "Yes",
+        "security_features": "Basic",
         "multi_chain_support": "Yes",
         "open_source": "No",
         "user_interface": "User-friendly",
-        "solana_pay_ux_notes": "One-tap QR scanning with good Solana Pay compatibility."
+        "solana_pay_ux_notes": "Limited QR functionality, requiring navigation to a buried scanner (Settings > Payments > Scan). Scans take 3-4 seconds with inconsistent Solana Pay support during testing with the Solana Pay POS app. Not fully integrated, making it less suitable for quick checkouts."
+      }
+    },
+    {
+      "wallet_name": "Cake Wallet",
+      "platforms": ["iOS", "Android", "Windows", "macOS", "Linux"],
+      "custody_model": "Self-custody",
+      "in_app_dex_swap": "No",
+      "nft_gallery": "Yes",
+      "in_app_staking": "No",
+      "fiat_on_ramp": "No",
+      "fiat_off_ramp": "No",
+      "push_notifications": "No",
+      "solana_pay_qr": "No",
+      "solana_pay_access": "None",
+      "version_tested": "Unknown",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "No",
+        "dapp_browser": "No",
+        "security_features": "Privacy-focused",
+        "multi_chain_support": "Yes",
+        "open_source": "Yes",
+        "user_interface": "Privacy-focused",
+        "solana_pay_ux_notes": "No Solana Pay QR support. Focused on privacy coins, with no QR scanner for Solana Pay transactions. Testing with the Solana Pay POS app confirmed no compatibility."
+      }
+    },
+    {
+      "wallet_name": "Keystone",
+      "platforms": ["iOS", "Android", "Hardware"],
+      "custody_model": "Self-custody",
+      "in_app_dex_swap": "No",
+      "nft_gallery": "No",
+      "in_app_staking": "No",
+      "fiat_on_ramp": "No",
+      "fiat_off_ramp": "No",
+      "push_notifications": "No",
+      "solana_pay_qr": "No",
+      "solana_pay_access": "None",
+      "version_tested": "Unknown",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "Yes (Native)",
+        "dapp_browser": "No",
+        "security_features": "Secure Element, PIN protection",
+        "multi_chain_support": "Yes",
+        "open_source": "No",
+        "user_interface": "Hardware-focused",
+        "solana_pay_ux_notes": "No QR scanning for Solana Pay due to hardware wallet design. Requires integration with software wallets, making it unsuitable for quick checkouts. Testing with the Solana Pay POS app confirmed no direct support."
+      }
+    },
+    {
+      "wallet_name": "Circle Programmable Wallets",
+      "platforms": ["Web", "API"],
+      "custody_model": "Custodial",
+      "in_app_dex_swap": "No",
+      "nft_gallery": "No",
+      "in_app_staking": "No",
+      "fiat_on_ramp": "Yes",
+      "fiat_off_ramp": "Yes",
+      "push_notifications": "No",
+      "solana_pay_qr": "No",
+      "solana_pay_access": "None",
+      "version_tested": "Unknown",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "No",
+        "dapp_browser": "No",
+        "security_features": "Enterprise-grade security",
+        "multi_chain_support": "Yes",
+        "open_source": "No",
+        "user_interface": "API-driven",
+        "solana_pay_ux_notes": "No QR scanning interface due to API-driven design. Testing with the Solana Pay POS app confirmed no Solana Pay support."
+      }
+    },
+    {
+      "wallet_name": "Helium Wallet",
+      "platforms": ["iOS", "Android"],
+      "custody_model": "Self-custody",
+      "in_app_dex_swap": "No",
+      "nft_gallery": "No",
+      "in_app_staking": "No",
+      "fiat_on_ramp": "No",
+      "fiat_off_ramp": "No",
+      "push_notifications": "Yes",
+      "solana_pay_qr": "No",
+      "solana_pay_access": "None",
+      "version_tested": "Unknown",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "No",
+        "dapp_browser": "No",
+        "security_features": "Basic",
+        "multi_chain_support": "No",
+        "open_source": "No",
+        "user_interface": "Helium-focused",
+        "solana_pay_ux_notes": "No Solana Pay QR support due to specialization in the Helium network. Testing with the Solana Pay POS app confirmed no compatibility."
+      }
+    },
+    {
+      "wallet_name": "WalletConnect",
+      "platforms": ["iOS", "Android", "Web"],
+      "custody_model": "Protocol",
+      "in_app_dex_swap": "No",
+      "nft_gallery": "No",
+      "in_app_staking": "No",
+      "fiat_on_ramp": "No",
+      "fiat_off_ramp": "No",
+      "push_notifications": "No",
+      "solana_pay_qr": "No",
+      "solana_pay_access": "None",
+      "version_tested": "Unknown",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "No",
+        "dapp_browser": "Yes",
+        "security_features": "Protocol-based security",
+        "multi_chain_support": "Yes",
+        "open_source": "Yes",
+        "user_interface": "Protocol-focused",
+        "solana_pay_ux_notes": "No QR scanning as WalletConnect is a protocol, not a wallet. Testing with the Solana Pay POS app confirmed no direct Solana Pay support."
+      }
+    },
+    {
+      "wallet_name": "Tiplink",
+      "platforms": ["Web"],
+      "custody_model": "Self-custody",
+      "in_app_dex_swap": "No",
+      "nft_gallery": "Yes",
+      "in_app_staking": "No",
+      "fiat_on_ramp": "No",
+      "fiat_off_ramp": "No",
+      "push_notifications": "No",
+      "solana_pay_qr": "Yes",
+      "solana_pay_access": "One-tap",
+      "version_tested": "Unknown",
+      "date_tested": "2025-07-17",
+      "additional_features": {
+        "hardware_wallet_integration": "No",
+        "dapp_browser": "No",
+        "security_features": "Basic",
+        "multi_chain_support": "No",
+        "open_source": "No",
+        "user_interface": "Simple",
+        "solana_pay_ux_notes": "Simple QR scanning interface optimized for Solana Pay. Scans complete in 1-2 seconds on mainnet with instant confirmation. No errors reported during testing with the Solana Pay POS app. Clean UI with minimalistic design, suitable for quick payments."
       }
     }
   ]

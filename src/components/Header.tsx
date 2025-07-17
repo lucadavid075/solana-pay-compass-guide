@@ -9,7 +9,7 @@ export default function Header() {
         </h1>
       </div>
       <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        Explore 27+ Solana wallets with detailed Solana Pay QR compatibility notes to help builders, merchants, and users choose the perfect wallet for seamless checkouts.
+        Explore Solana Supported wallets with detailed Solana Pay QR compatibility notes to help you choose the perfect wallet for seamless checkouts.
       </p>
     </header>
   );
