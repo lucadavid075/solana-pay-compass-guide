@@ -1,4 +1,6 @@
-[Major Solana Wallets Compatibility With Solana Pay behaviour Document](https://docs.google.com/document/d/1ug3pTl1fDaZ7-YPFtqmZjxFBjsoZyhHuN0RaU05EGvI/edit?usp=sharing)
+[Major Solana Wallets Compatibility With Solana Pay Docs with evidence](https://docs.google.com/document/d/1ug3pTl1fDaZ7-YPFtqmZjxFBjsoZyhHuN0RaU05EGvI/edit?usp=sharing)
+[Live app](https://solana-pay-compass-guide.vercel.app/)
+[Demo loom video](https://www.loom.com/share/457f0ca9b9d34441a11fe84f40e9d4fa)
 
 # Solana Wallet Explorer
 
