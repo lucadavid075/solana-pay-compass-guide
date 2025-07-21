@@ -2,6 +2,7 @@
   "wallets": [
     {
       "wallet_name": "Solflare",
+      "website": "https://solflare.com",
       "platforms": ["Web", "iOS", "Android", "Chrome", "Firefox", "Brave", "Edge"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
@@ -26,6 +27,7 @@
     },
     {
       "wallet_name": "Phantom",
+      "website": "https://phantom.app",
       "platforms": ["iOS", "Android", "Chrome", "Firefox", "Brave"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
@@ -50,6 +52,7 @@
     },
     {
       "wallet_name": "Decaf",
+      "website": "https://decaf.so",
       "platforms": ["Web", "iOS", "Android"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
@@ -74,6 +77,7 @@
     },
     {
       "wallet_name": "Backpack",
+      "website": "https://backpack.app",
       "platforms": ["iOS", "Android", "Chrome", "Brave"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
@@ -98,6 +102,7 @@
     },
     {
       "wallet_name": "Bitget Wallet",
+      "website": "https://web3.bitget.com",
       "platforms": ["iOS", "Android", "Chrome"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
@@ -122,6 +127,7 @@
     },
     {
       "wallet_name": "Jupiter Wallet",
+      "website": "https://jup.ag",
       "platforms": ["iOS", "Android"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
@@ -146,6 +152,7 @@
     },
     {
       "wallet_name": "Glow Wallet",
+      "website": "https://glow.app",
       "platforms": ["iOS", "Android"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
@@ -170,6 +177,7 @@
     },
     {
       "wallet_name": "Espresso Cash",
+      "website": "https://espressocash.com",
       "platforms": ["iOS", "Android"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
@@ -194,6 +202,7 @@
     },
     {
       "wallet_name": "Trezor",
+      "website": "https://trezor.io",
       "platforms": ["Hardware", "Web", "iOS", "Android"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",
@@ -218,6 +227,7 @@
     },
     {
       "wallet_name": "Exodus",
+      "website": "https://exodus.com",
       "platforms": ["iOS", "Android", "Windows", "macOS", "Linux"],
       "custody_model": "Self-custody",
       "in_app_dex_swap": "Yes",

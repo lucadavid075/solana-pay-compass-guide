@@ -4,10 +4,11 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { ArrowRight, Smartphone, Monitor, Globe, HardDrive, Chrome, CreditCard, Zap, PiggyBank, Coins, Bell, Eye, Shield } from 'lucide-react';
+import { ArrowRight, Smartphone, Monitor, Globe, HardDrive, Chrome, CreditCard, Zap, PiggyBank, Coins, Bell, Eye, Shield, ExternalLink } from 'lucide-react';
 
 interface Wallet {
   wallet_name: string;
+  website?: string;
   platforms: string[];
   custody_model: string;
   in_app_dex_swap: string;
@@ -87,9 +88,22 @@ export default function WalletCard({ wallet }: WalletCardProps) {
       <Card className="h-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 bg-card border-border">
         <CardHeader className="pb-3">
           <div className="flex items-start justify-between">
-            <CardTitle className="text-lg font-semibold text-card-foreground">
-              {wallet.wallet_name}
-            </CardTitle>
+            <div className="flex items-center gap-2">
+              <CardTitle className="text-lg font-semibold text-card-foreground">
+                {wallet.wallet_name}
+              </CardTitle>
+              {wallet.website && (
+                <a
+                  href={wallet.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label={`Visit ${wallet.wallet_name} website`}
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              )}
+            </div>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -184,7 +198,20 @@ export default function WalletCard({ wallet }: WalletCardProps) {
             </DialogTrigger>
             <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
-                <DialogTitle className="text-xl">{wallet.wallet_name} Details</DialogTitle>
+                <div className="flex items-center justify-between">
+                  <DialogTitle className="text-xl">{wallet.wallet_name} Details</DialogTitle>
+                  {wallet.website && (
+                    <a
+                      href={wallet.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors"
+                    >
+                      Visit Website
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  )}
+                </div>
               </DialogHeader>
               
               <div className="space-y-6">
