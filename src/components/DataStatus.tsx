@@ -15,7 +15,7 @@ export default function DataStatus() {
     <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
       <Badge variant="secondary" className="flex items-center gap-2">
         <Calendar className="h-3 w-3" />
-        Last Updated: {lastUpdated}
+        Last Updated: July 17, 2025
       </Badge>
       
       <Badge variant="secondary" className="flex items-center gap-2">
